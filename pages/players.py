@@ -2,7 +2,7 @@ import streamlit as st
 import plotly.express as px 
 import pandas as pd 
 
-df = pd.read_csv(r"C:\Users\fg\Downloads\Project 12_FIFA EDA\fifa_eda.csv")
+df = pd.read_csv("fifa_eda.csv")
 df.dropna(inplace=True)
 selected = st.selectbox("Select feature to see it's graph ",df.select_dtypes(include='number').columns)
 N_10 = df.nlargest(10,selected)[['Name','Club',selected]]
